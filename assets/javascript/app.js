@@ -88,7 +88,7 @@ function displayQuestion(questionObject) {
     // Starts the countdown for the question
     runTheTimeout = setTimeout(function () {
         // Only executes this if an answer weren't clicked in time
-            displayAnswer(questionObject);
+        displayAnswer(questionObject);
     }, timePerQuestion);
 };
 
@@ -116,7 +116,7 @@ function displayAnswer(questionObject, answer) {
             numberOfIncompleteAnswers++;
             container.append($("<h2>").addClass("p-3").text("Out of time!"));
         }
-        
+
         // Displays the correct answer
         container.append($("<p>").addClass("lead pb-3").text("The correct answer was: " + questionObject.correctAnswer));
     };
@@ -137,7 +137,7 @@ function timerFunction(timer) {
         $("#timerID").text("Time remaining: " + timeLeft);
 
         // Halts the timer if zero seconds is reached
-        if(timeLeft <= 0) {
+        if (timeLeft <= 0) {
             clearInterval(timerForQuestion);
         };
     }, millisecondsInASecond);
